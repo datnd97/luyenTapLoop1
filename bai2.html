@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ -->
+    <script>
+        let myTemperature = parseFloat(prompt("Mời bạn nhập nhiệt độ của mình:"));
+        let oldTemperature = myTemperature;
+        let newTemperature = 0;
+        let textChange;
+        let secondLine; let firstLine; let threeLine
+        for (i = 0; myTemperature !== 0; i++) {
+            if (myTemperature > 100) {
+                myTemperature = parseFloat(prompt("Mời bạn giảm nhiệt độ:"));
+                newTemperature += myTemperature;
+
+                myTemperature = oldTemperature - newTemperature;
+                textChange = "trừ đi ";
+
+            }
+            else if (myTemperature < 20) {
+                myTemperature = parseFloat(prompt("Mời bạn tăng nhiệt độ"));
+                newTemperature += myTemperature;
+
+                myTemperature = oldTemperature + newTemperature;
+                textChange = "cộng thêm ";
+            }
+            else if (myTemperature >= 20 && myTemperature <= 100) {
+
+                break;
+            }
+        }
+        firstLine = "Nhiệt độ cũ của bạn là:" + oldTemperature;
+        secondLine = " Nhiệt độ đã " + textChange + newTemperature;
+        threeLine = " Nhiệt độ mới là: " + myTemperature;
+        document.write('<p>' + firstLine + '</p>' + '<p>' + secondLine + '</p>' + '<p>' + threeLine + '</p>');
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        let num = parseInt(prompt("Mời bạn đoán số từ 1 đến 10:"));
+        let check = false;
+        let randomNum = Math.floor(Math.random() * 11);
+        console.log(randomNum);
+        while (num > 10) {
+            num = parseInt(prompt("Mời bạn đoán lại:"));
+        }
+
+        for (let i = 2; i > 0; i--) {
+            let isDoanDung = (num == randomNum);
+            if (isDoanDung) {
+                check = true;
+                break;
+            }
+            else {
+                alert("Bạn còn " + i + " lượt đoán");
+                let soLonHon5 = 5;
+                let timSoNhoHon = (randomNum <= 5);
+                let timSoLonHon = (randomNum > 5);
+
+                if (timSoNhoHon) {
+
+                    alert("Đay là số từ 0 đến 5");
+                    num = parseInt(prompt('Mời bạn tiếp tục đoán:'));
+                    if (isDoanDung) {
+                        check = true;
+                    }
+                }
+                else {
+                    alert("đây là số từ 6 đến 10");
+                    num = parseInt(prompt('Mời bạn tiếp tục đoán:'));
+                    if (isDoanDung) {
+                        check = true;
+                    }
+                }
+            }
+        }
+        if (check == true) {
+            alert('Bạn đã đoán đúng.Xin cám ơn bạn đã tham gia' + ".Kết quả la:" + randomNum);
+        }
+        else {
+            alert("Bạn đã hết lượt đoán.Bạn thua");
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
